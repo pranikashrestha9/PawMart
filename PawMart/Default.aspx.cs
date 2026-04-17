@@ -161,15 +161,15 @@ namespace PawMart
 
 
 
-        protected override void OnPreRender(EventArgs e)
-        {
-            base.OnPreRender(e);
+        //protected override void OnPreRender(EventArgs e)
+        //{
+        //    base.OnPreRender(e);
 
-            // Register event handler for the repeater
-            if (!IsPostBack)
-            {
-                rptFeaturedProducts.ItemCommand += new RepeaterCommandEventHandler(rptFeaturedProducts_ItemCommand);
-            }
-        }
+        //    // Register event handler for the repeater
+        //    if (!IsPostBack)
+        //    {
+        //        rptFeaturedProducts.ItemCommand += new RepeaterCommandEventHandler(rptFeaturedProducts_ItemCommand);
+        //    }
+        //}
     }
 }

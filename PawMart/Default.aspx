@@ -53,22 +53,28 @@
         ───────────────────────────────────────── */
         .hero-section {
             position: relative;
-            background: #0F0A06;
-            padding: 120px 0 100px;
+            background-image: url('/images/hero1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 120px 20px;
+            color: white;
             overflow: hidden;
         }
 
-        /* Subtle grid overlay */
-.hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1;
-}
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
 
-        /* Warm radial glow */
         .hero-section::after {
             content: '';
             position: absolute;
@@ -81,41 +87,26 @@
             pointer-events: none;
         }
 
-.hero-section .container {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-}
-.hero-title {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-}
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+        }
 
         .hero-title em {
             font-style: normal;
             color: var(--brand-hover);
         }
-.hero-subtitle {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-    .hero-section {
-    position: relative;
-    background-image: url('/images/hero1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    min-height: 100vh; /* full screen, better hero feel */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    padding: 120px 20px;
-    color: white;
-    overflow: hidden;
-}
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
 
         .hero-button {
             display: inline-flex;
@@ -123,7 +114,7 @@
             gap: 8px;
             background: var(--brand);
             color: #FFFFFF;
-             padding: 14px 28px;
+            padding: 14px 28px;
             font-size: 1rem;
             font-weight: 600;
             border-radius: var(--radius-md);
@@ -170,7 +161,6 @@
             margin-bottom: 12px;
         }
 
-        /* Eyebrow line above section titles */
         .section-title::before {
             content: '';
             display: block;
@@ -553,33 +543,40 @@
             align-items: center;
             gap: 60px;
             max-width: 960px;
+            width: 100%;              /* ← ensure it never exceeds parent */
             margin: 0 auto;
             background: var(--bg-white);
             border: 1px solid var(--border);
             border-radius: var(--radius-xl);
             padding: 56px;
             box-shadow: var(--shadow-md);
+            overflow: hidden;
         }
 
         .app-info {
             flex: 1;
-            min-width: 280px;
+            min-width: 0;         
             text-align: left;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
+
         .app-title {
-            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-size: clamp(1.1rem, 4vw, 1.9rem);
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.025em;
             margin-bottom: 14px;
+            word-break: break-word;
         }
 
         .app-description {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: clamp(0.8rem, 3vw, 0.95rem);
             line-height: 1.75;
             margin-bottom: 28px;
+            word-break: break-word;
         }
 
         .app-buttons {
@@ -637,6 +634,7 @@
 
         .app-image img {
             max-width: 220px;
+            width: 100%;
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
             display: block;
@@ -655,31 +653,59 @@
         /* ─────────────────────────────────────────
            RESPONSIVE
         ───────────────────────────────────────── */
+        /* ── Responsive ── */
         @media (max-width: 992px) {
             .app-container {
                 flex-direction: column;
-                padding: 40px 32px;
-                gap: 40px;
+                padding: 32px 20px;
+                gap: 32px;
+                overflow: hidden;
+                width: 100%;
             }
 
             .app-info {
                 text-align: center;
+                width: 100%;
+                min-width: 0;
             }
 
             .app-buttons {
                 justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app-button {
+                width: 100%;
+                max-width: 240px;
+                justify-content: center;
+            }
+
+            .app-image {
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             .app-image img {
-                max-width: 180px;
+                max-width: 160px;
+                width: 100%;
             }
         }
 
+        @media (max-width: 576px) {
+            .app-container {
+                padding: 24px 16px;   /* ← tighter on very small screens */
+                border-radius: var(--radius-lg);
+            }
+        }
+
+
         @media (max-width: 768px) {
-             .hero-section {
-        min-height: 80vh;
-        padding: 100px 16px;
-    }
+            .hero-section {
+                min-height: 80vh;
+                padding: 100px 16px;
+            }
 
             .features-section,
             .categories-section,
@@ -712,24 +738,25 @@
             }
 
             .app-container {
-                padding: 32px 24px;
+                padding: 28px 16px;
             }
 
             .testimonial {
                 padding: 28px 20px;
             }
         }
-        @media (max-width: 480px) {
-    .hero-section {
-        min-height: 70vh;
-        padding: 80px 12px;
-    }
 
-    .hero-button {
-        width: 100%;
-        max-width: 260px;
-    }
-}
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 70vh;
+                padding: 80px 12px;
+            }
+
+            .hero-button {
+                width: 100%;
+                max-width: 260px;
+            }
+        }
     </style>
 </asp:Content>
 
@@ -739,7 +766,7 @@
         <div class="container">
             <h1 class="hero-title">Everything your pet deserves, delivered fast.</h1>
             <p class="hero-subtitle">Premium food, toys, grooming &amp; accessories for dogs, cats and more. Shop trusted brands, delivered to your door.</p>
-            <asp:Button ID="btnOrderNow" runat="server" CssClass="hero-button" Text="Order Now"  />
+            <asp:Button ID="btnOrderNow" runat="server" CssClass="hero-button" Text="Order Now" />
         </div>
     </section>
     <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
@@ -797,7 +824,7 @@
             <h2 class="section-title">Featured Products</h2>
             <asp:Label ID="lblProductError" runat="server" CssClass="error-message" Visible="false" ForeColor="Red"></asp:Label>
             <div class="products-container">
-                <asp:Repeater ID="rptFeaturedProducts" runat="server">
+                <asp:Repeater ID="rptFeaturedProducts" runat="server" OnItemCommand="rptFeaturedProducts_ItemCommand">
                     <ItemTemplate>
                         <div class="product-card">
                             <div class="product-image-container">
@@ -808,7 +835,7 @@
                                 <h3 class="product-name"><%# Eval("Name") %></h3>
                                 <div class="product-price">$<%# Eval("Price", "{0:0.00}") %></div>
                                 <div class="product-buttons">
-                                    <asp:LinkButton ID="btnAddToCart" runat="server" CssClass="button button-primary" 
+                                    <asp:LinkButton ID="btnAddToCart" runat="server" CssClass="button button-primary"
                                         CommandName="AddToCart" CommandArgument='<%# Eval("ProductID") %>'>
                                         <i class="fas fa-shopping-cart"></i> Add to Cart
                                     </asp:LinkButton>

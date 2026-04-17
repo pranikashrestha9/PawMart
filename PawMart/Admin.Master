@@ -276,7 +276,7 @@
             </div>
 
             <ul class="sidebar-menu">
-                <li class="active">
+                <li>
                     <a href="Admindash.aspx">
                         <i class="fas fa-tachometer-alt"></i>
                         Dashboard
@@ -314,12 +314,12 @@
                        
                     </ul>
                 </li>
-                 <li class="active">
-    <a href="ReviewDash.aspx">
-        <i class="fas fa-tachometer-alt"></i>
-        Product Reviews
-    </a>
-</li>
+                 <li>
+                    <a href="ReviewDash.aspx">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Product Reviews
+                    </a>
+                </li>
              
            
                 <li>
@@ -344,8 +344,7 @@
            
             </div>
         </div>
-    </div>
-        </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Toggle submenu

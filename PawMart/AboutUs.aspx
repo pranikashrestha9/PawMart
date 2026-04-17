@@ -146,7 +146,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .member-image {
+/*        .member-image {
             height: 250px;
             overflow: hidden;
         }
@@ -160,6 +160,22 @@
 
         .team-member:hover .member-image img {
             transform: scale(1.1);
+        }*/
+
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.03); /* reduced zoom */
         }
 
         .member-info {
@@ -394,7 +410,7 @@
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-image">
-                    <img src="/api/placeholder/400/320" alt="John Smith">
+                    <img src="/Images/john.jpg" alt="John Smith">
                 </div>
                 <div class="member-info">
                     <h3>John Smith</h3>
@@ -409,7 +425,7 @@
             
             <div class="team-member">
                 <div class="member-image">
-                    <img src="/api/placeholder/400/320" alt="Sarah Johnson">
+                    <img src="/Images/sarah.jpg" alt="Sarah Johnson">
                 </div>
                 <div class="member-info">
                     <h3>Sarah Johnson</h3>
@@ -424,7 +440,7 @@
             
             <div class="team-member">
                 <div class="member-image">
-                    <img src="/api/placeholder/400/320" alt="Michael Chen">
+                    <img src="/Images/michael.jpg" alt="Michael Chen">
                 </div>
                 <div class="member-info">
                     <h3>Michael Chen</h3>
@@ -439,7 +455,7 @@
             
             <div class="team-member">
                 <div class="member-image">
-                    <img src="/api/placeholder/400/320" alt="Emma Rodriguez">
+                    <img src="/Images/emma.jpg" alt="Emma Rodriguez">
                 </div>
                 <div class="member-info">
                     <h3>Emma Rodriguez</h3>
@@ -464,7 +480,7 @@
                 <p class="testimonial-text">"PawMart has completely changed how I order food. The app is so easy to use, and my orders always arrive on time. I love the variety of restaurants available!"</p>
                 <div class="testimonial-author">
                     <div class="author-image">
-                        <img src="/api/placeholder/150/150" alt="David Miller">
+                        <img src="/Images/david.jpg" alt="David Miller">
                     </div>
                     <div class="author-info">
                         <h4>David Miller</h4>
@@ -485,7 +501,7 @@
                 <p class="testimonial-text">"As a busy professional, I rely on PawMart for both lunch at the office and dinner at home. Their customer service is exceptional - they quickly resolved an issue I had with an order!"</p>
                 <div class="testimonial-author">
                     <div class="author-image">
-                        <img src="/api/placeholder/150/150" alt="Jennifer Lee">
+                        <img src="/Images/jennifer.jpg" alt="Jennifer Lee">
                     </div>
                     <div class="author-info">
                         <h4>Jennifer Lee</h4>
@@ -506,7 +522,7 @@
                 <p class="testimonial-text">"I appreciate the wide selection of healthy food options on PawMart. As someone with dietary restrictions, it's been a game-changer to easily find restaurants that cater to my needs."</p>
                 <div class="testimonial-author">
                     <div class="author-image">
-                        <img src="/api/placeholder/150/150" alt="Robert Taylor">
+                        <img src="/Images/robert.jpg" alt="Robert Taylor">
                     </div>
                     <div class="author-info">
                         <h4>Robert Taylor</h4>
